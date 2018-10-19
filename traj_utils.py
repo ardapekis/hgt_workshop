@@ -49,7 +49,7 @@ def draw_maze(sim, start, complexity):
         cell = (round(random.uniform(x_dom[0], x_dom[1]), 1), round(random.uniform(y_dom[0], y_dom[1]), 1))
         if (not cell in traj):
             blocks.append(cell)
-            sim.axes.add_patch(patches.Circle(cell, 0.025))
+            sim.axes.add_patch(patches.Circle((cell[0]-0.025, cell[1]-0.025), 0.05, 0.05))
     goal = (round(traj[-1][0], 1), round(traj[-1][1], 1))
     sim.axes.add_patch(patches.Circle(goal, 0.05, color='g'))
     return blocks, goal
